@@ -9,4 +9,5 @@ const sequelize = new Sequelize("MiNegocioDB", "postgres", "espe", {
   logging: false, // Para limpiar la consola
 });
 
+
 module.exports = { sequelize, DataTypes, Op };
