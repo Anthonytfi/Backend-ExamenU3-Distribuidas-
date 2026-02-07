@@ -36,3 +36,4 @@ const Message = sequelize.define(
 
 module.exports = Message;
 
+
