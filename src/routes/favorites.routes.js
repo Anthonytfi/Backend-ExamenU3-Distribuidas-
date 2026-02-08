@@ -29,3 +29,4 @@ router.delete("/:listingId", authRequired, async (req, res) => {
 });
 
 module.exports = router;
+
