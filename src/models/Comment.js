@@ -15,3 +15,4 @@ const Comment = sequelize.define("Comment", {
 });
 
 module.exports = Comment;
+
