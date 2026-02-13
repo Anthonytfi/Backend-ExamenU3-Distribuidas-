@@ -1,31 +1,25 @@
-# Marketplace Backend - Node.js & Express
+# Marketplace Backend - Servidor de Aplicaciones Distribuidas
 
-Este es el servidor centralizado del Marketplace, una aplicación distribuida diseñada para el comercio electrónico C2C. El backend actúa como un orquestador que gestiona la lógica de negocio, la comunicación en tiempo real y la integración con servicios en la nube.
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.11.0-brightgreen)](https://nodejs.org/)
+[![Express Version](https://img.shields.io/badge/express-4.18.2-blue)](https://expressjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Tecnologías Utilizadas
+Este repositorio contiene el motor central (Backend) del proyecto Marketplace. Es una API RESTful desarrollada con **Node.js** y **Express**, diseñada para gestionar la persistencia de datos, la seguridad mediante identidad federada y la comunicación bidireccional en tiempo real.
 
-* **Entorno de Ejecución:** [Node.js](https://nodejs.org/) (v20+)
-* **Framework:** [Express.js](https://expressjs.com/)
-* **Base de Datos:** [PostgreSQL](https://www.postgresql.org/)
-* **ORM:** [Sequelize](https://sequelize.org/)
-* **Comunicación en Tiempo Real:** [Socket.io](https://socket.io/)
-* **Seguridad y Auth:** [Auth0](https://auth0.com/) (JWT)
-* **Almacenamiento en Nube:** [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
-
-## Características Principales
-
-* **Autenticación Federada:** Validación de usuarios mediante tokens JWT proporcionados por Auth0.
-* **Gestión de Productos:** CRUD completo con soporte para carga de imágenes directamente a contenedores de Azure.
-* **Chat en Vivo:** Sistema de mensajería instantánea bidireccional mediante WebSockets.
-* **Arquitectura MVC:** Separación clara entre Modelos, Controladores y Rutas.
-* **Validación de Datos:** Uso de middlewares para asegurar la integridad de las peticiones.
+## Stack Tecnológico
+* **Runtime:** Node.js (Entorno de ejecución asíncrono).
+* **Framework:** Express.js (Gestión de rutas y middlewares).
+* **ORM:** Sequelize (Mapeo objeto-relacional para PostgreSQL).
+* **Real-Time:** Socket.io (Protocolo WebSocket para el chat).
+* **Cloud Services:** * **Auth0:** Autenticación robusta basada en JWT.
+    * **Azure Blob Storage:** Almacenamiento distribuido de imágenes de productos
 
 # Instalación y Configuración
 
 Clonar el repositorio
 
 ```bash
-git clone [URL-DE-TU-REPOSITORIO]
+git clone [URL DEL REPOSITORIO]
 cd backend
 ```
 # Instalar dependencias:
@@ -52,8 +46,7 @@ npm run dev
 ```
 
 # Seguridad
-El backend implementa un middleware de verificación que valida el AccessToken enviado desde el cliente móvil. Ninguna operación de escritura (POST, PUT, DELETE) puede ser ejecutada sin un token válido emitido por Auth0.
-
+El sistema utiliza un esquema de seguridad basado en Bearer Tokens. Todas las peticiones a los módulos de products y chat deben incluir un encabezado de autorización válido: Authorization: Bearer <JWT_TOKEN>
 
 
 
