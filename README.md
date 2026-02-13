@@ -23,16 +23,16 @@ Este es el servidor centralizado del Marketplace, una aplicación distribuida di
 ## Estructura del Proyecto
 
 ```text
-backend/
-├── src/
-│   ├── config/         # Configuración de base de datos y servicios
-│   ├── controllers/    # Lógica de las rutas
-│   ├── models/         # Definición de tablas PostgreSQL (Sequelize)
-│   ├── routes/         # Endpoints de la API
-│   ├── sockets/        # Lógica de Socket.io para el chat
-│   └── app.js          # Punto de entrada de la aplicación
-├── .env.example        # Variables de entorno necesarias
-└── package.json        # Dependencias y scripts
+src/
+├── database/      # Configuración y conexión a PostgreSQL
+├── middlewares/   # Validaciones de seguridad y Auth0
+├── modules/       # Lógica de negocio dividida por módulos:
+│   ├── auth/      # Gestión de sesiones
+│   ├── chat/      # Controladores y servicios de mensajería
+│   ├── products/  # Gestión de catálogo e inventario
+│   └── users/     # Perfiles y datos de usuario
+├── uploads/       # Almacenamiento temporal de archivos
+└── index.js       # Punto de entrada y arranque del servidor
 ```
 
 # Instalación y Configuración
